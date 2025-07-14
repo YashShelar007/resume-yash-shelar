@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   compile:
     name: Compile resume PDF
@@ -23,11 +26,11 @@ jobs:
             cd data
             pdflatex yash_shelar_resume.tex
 
+      - name: Auto-commit compiled PDF
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update compiled resume PDF
           commit_author: Yash Shelar <yshelar@asu.edu>
-          repository: .
-          push_options: --force
+          file_pattern: yash_shelar_resume.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
