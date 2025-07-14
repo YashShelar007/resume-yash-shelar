@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   compile:
@@ -26,3 +26,8 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update compiled resume PDF
+          commit_author: Yash Shelar <yshelar@asu.edu>
+          repository: .
+          push_options: --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
