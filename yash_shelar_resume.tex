@@ -1,125 +1,175 @@
-\documentclass[a4paper,10pt]{article}
+
+%-------------------------
+% Resume in Latex
+% Author : Yash Ramesh Shelar
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[a4paper, 10pt]{article}
+
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pagestyles]{titlesec}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage[hidelinks]{hyperref}
-\usepackage[margin=0.75in]{geometry}
-\usepackage{fontawesome}
-\usepackage{multicol}
+\input{glyphtounicode}
+\usepackage[bottom=2cm, top=2.1cm, left=2.1cm, right=2.1cm]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks = true,linkcolor = blue,
+            urlcolor  = blue, citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
+
+\usepackage{newtxtext,newtxmath}
+\usepackage{ragged2e}
+\setlist{label=\textbullet}
+\setlength{\footskip}{3.60004pt} 
+\usepackage{anyfontsize}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
+\fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Custom Commands
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\hsize}{\hsize}
+
+\titleformat{\section}{
+  \scshape\bfseries\raggedright
+}{}{0em}{\MakeUppercase}[\color{black}\titlerule]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeExperienceHeading}[2]{
+    \item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{#2} \\
+    \textbf{#1} & \textbf{#2} 
+    \end{tabular*}
+    \vspace{-15pt}
+}
+\newcommand{\resumeEducationContent}[4]{
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{#2} \\ 
       {#3} & {#4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{#2}
+    \end{tabular*}
+    \vspace{-10pt}
 }
 
-\newcommand{\resumeItem}[1]{\item\small{#1}\vspace{-4pt}}
-\newcommand{\resumeSubItem}[2]{\resumeItem{\textbf{#1}{: #2}}}
-\newcommand{\resumeSection}[1]{\vspace{-6pt}\section*{\uppercase{#1}}}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
 \begin{document}
-
-%----------HEADER----------
+\justifying
 \begin{center}
-    {\LARGE \textbf{Yash Ramesh Shelar}}\\
-    \vspace{4pt}
-    \small
-    \href{mailto:yshelar2000@gmail.com}{yshelar2000@gmail.com} \textbar{}
-    (623) 281-8692 \textbar{}
-    \href{https://linkedin.com/in/shelar-yash}{linkedin.com/in/shelar-yash} \textbar{}
-    \href{https://github.com/YashShelar007}{github.com/YashShelar007} \textbar{}
-    \href{https://yashshelar.com}{yashshelar.com}
+    \textbf{\Large \scshape YASH RAMESH SHELAR} \\
+    \href{mailto:yshelar2000@gmail.com}{\underline{yshelar2000@gmail.com}} $|$ 
+    (623) 281-8692 $|$
+    \href{https://linkedin.com/in/shelar-yash}{\underline{LinkedIn/shelar-yash}} $|$
+    \href{https://github.com/YashShelar007}{\underline{GitHub/YashShelar007}} $|$
+    Portfolio
 \end{center}
 
-%-----------EDUCATION-----------
-\resumeSection{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Arizona State University}{Tempe, AZ}
-    {M.S. in Computer Science (Thesis), GPA: 4.0}{Jul 2025 (expected)}
-    \resumeItem{Thesis: \textit{Model Compression as a Service for Edge Devices}}
-  \resumeSubheading
-    {Arizona State University}{Tempe, AZ}
-    {B.S. in Computer Science, Summa Cum Laude}{Dec 2022}
-    \resumeItem{Honors: New American Scholar, Dean’s List}
-\resumeSubHeadingListEnd
+\vspace{-10pt}
+\section{Education}
+\vspace{-5pt}
+\begin{itemize}[itemsep=1pt, leftmargin=0in, label={}]
+  \resumeEducationContent
+    {Master of Science (Thesis), Computer Science}{July 2025}
+    {Arizona State University, Tempe, AZ}{}
+    \vspace{-8pt}
+    \begin{itemize}[itemsep=-2pt]
+      \item \textbf{Thesis:} Model Compression as a Service for Resource-constrained Edge Devices
+      \item \textbf{Coursework:} Distributed Systems, Operating Systems, Cloud Computing, Data Structures \& Algorithms
+    \end{itemize}
+  \resumeEducationContent
+    {Bachelor of Science, Computer Science}{Dec 2022}
+    {Arizona State University, Tempe, AZ}{}
+    \vspace{-8pt}
+    \begin{itemize}[itemsep=-2pt]
+      \item Honors: Summa Cum Laude, New American Scholar, Dean’s List
+    \end{itemize}
+\end{itemize}
 
-%-----------EXPERIENCE-----------
-\resumeSection{Experience}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Research Assistant — VISA Research Lab}{Jan 2024 – Present}
-    {Arizona State University}{Tempe, AZ}
-    \resumeItemListStart
-        \resumeItem{Built a scalable ML compression pipeline using AWS ECS (Fargate), S3, and IoT Core — reducing model deployment errors by 40\%.}
-        \resumeItem{Integrated CI/CD via Terraform and GitHub Actions, enabling zero-downtime updates.}
-        \resumeItem{Improved model format compatibility across 10+ architectures, supporting 1,000+ deployments/year.}
-    \resumeItemListEnd
+\vspace{-10pt}
+\section{Professional Experience}
+\vspace{-5pt}
+\begin{itemize}[leftmargin=0in, label={}]
+  \resumeExperienceHeading{Research Assistant — VISA Research Lab}{Jan 2024 – Present}
+  \begin{itemize}
+    \item Built a reliable compression pipeline using AWS ECS (Fargate), S3, and IoT Core, scaling to 1,000+ models/year.
+    \item Automated CI/CD pipelines with Terraform and GitHub Actions, achieving zero-downtime model updates.
+    \item Debugged live deployment failures and improved system resiliency across 10+ model architectures.
+  \end{itemize}
+  \resumeExperienceHeading{Teaching Assistant — Operating Systems, Mobile Computing}{Aug 2023 – Present}
+  \begin{itemize}
+    \item Mentored 600+ students on SwiftUI and OS internals; improved lab completion by 30\%.
+    \item Designed 5+ labs and grading scripts (Bash) to automate OS scheduling simulation evaluations.
+    \item Provided 100+ hours of individualized help, increasing app quality and student comprehension.
+  \end{itemize}
+\end{itemize}
 
-  \resumeSubheading
-    {Graduate Teaching Assistant — OS \& Mobile Dev}{Aug 2023 – Present}
-    {Arizona State University}{Tempe, AZ}
-    \resumeItemListStart
-        \resumeItem{Mentored 600+ students in SwiftUI, OS Scheduling, and Kernel modules.}
-        \resumeItem{Created 5+ OS lab modules and auto-grading scripts, boosting grading efficiency by 80\%.}
-        \resumeItem{Guided mobile app debugging and SwiftData integrations with 100+ hours of direct support.}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
+\vspace{-10pt}
+\section{Projects}
+\vspace{-5pt}
+\begin{itemize}[leftmargin=0in, label={}]
+  \resumeProjectHeading{Production Microservices on AWS EKS}{Apr 2024 – Present}
+  \begin{itemize}
+    \item Orchestrated Docker-based microservices on AWS EKS with auto-scaling for 3x load.
+    \item Integrated Jenkins CI/CD pipelines, reducing manual deploy errors by 70\%.
+  \end{itemize}
 
-%-----------PROJECTS-----------
-\resumeSection{Projects}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {Production Microservices on AWS EKS}{Apr 2024 – Present}
-    {}{}
-    \resumeItemListStart
-      \resumeItem{Deployed containerized microservices to AWS EKS with autoscaling/load balancing for 3x traffic spikes.}
-      \resumeItem{Integrated CI/CD using Jenkins, reducing manual errors by 70\%.}
-    \resumeItemListEnd
+  \resumeProjectHeading{Infrastructure Observability Dashboard}{Apr 2024 – Present}
+  \begin{itemize}
+    \item Built observability stack with Grafana, Prometheus, and Loki on AWS EKS.
+    \item Implemented OpenTelemetry tracing to diagnose live errors under 5 mins.
+    \item Added alerting + log correlation, reducing incident response by 60\%.
+  \end{itemize}
 
-  \resumeSubheading
-    {Serverless REST API on AWS Lambda}{Jan 2024 – Mar 2024}
-    {}{}
-    \resumeItemListStart
-      \resumeItem{Built stateless REST API with API Gateway + Lambda, scaling to 1,000+ req/sec.}
-      \resumeItem{Provisioned infra via CloudFormation and automated multi-stage deploys.}
-    \resumeItemListEnd
+  \resumeProjectHeading{CDN-Backed Static Delivery System}{Mar 2024 – Present}
+  \begin{itemize}
+    \item Deployed a resilient static content pipeline using AWS CloudFront, S3, NGINX, and Route53.
+    \item Maintained 99.9\% uptime with caching and failover routing; cut latency by 45\%.
+  \end{itemize}
 
-  \resumeSubheading
-    {AI Travel Planner — VoyageAI}{Mar 2024 – Present}
-    {}{}
-    \resumeItemListStart
-      \resumeItem{Generated personalized itineraries using Gemini AI + Firebase Auth.}
-      \resumeItem{Handled 5K+ concurrent sessions via React Native + Firestore.}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
+  \resumeProjectHeading{Serverless REST API on AWS Lambda}{Jan 2024 – Mar 2024}
+  \begin{itemize}
+    \item Built and deployed REST API with API Gateway + Lambda, handling 1,000+ RPS.
+    \item Used CloudFormation for multi-stage deployments and infra consistency.
+  \end{itemize}
+\end{itemize}
 
-%-----------SKILLS-----------
-\resumeSection{Skills}
-\resumeSubHeadingListStart
-  \resumeItem{\textbf{Languages:} Python, Java, C++, JavaScript/TypeScript, Swift}
-  \resumeItem{\textbf{Frameworks:} React Native, SwiftUI, Spring Boot, Firebase, Expo, Next.js}
-  \resumeItem{\textbf{Cloud \& Infra:} AWS (ECS, Lambda, S3), GCP (GKE, Cloud SQL), Docker, Kubernetes, Terraform}
-  \resumeItem{\textbf{DevOps \& Tools:} CI/CD, Jenkins, GitHub Actions, Cloud Monitoring, REST APIs}
-  \resumeItem{\textbf{Systems:} OS Internals, Scheduling, Edge Deployments, Microservices}
-\resumeSubHeadingListEnd
+\vspace{-10pt}
+\section{Technical Skills}
+\vspace{-5pt}
+\begin{itemize}[itemsep=1pt, leftmargin=0in, label={}]
+  \item \textbf{Languages:} Python, C++, Java, JavaScript/TypeScript, Bash, Swift
+  \item \textbf{System \& Infrastructure:} Linux, Docker, Kubernetes (EKS), AWS (EC2, Lambda, S3), Terraform, GitHub Actions, Jenkins
+  \item \textbf{Networking \& Databases:} TCP/IP, Load Balancing, CDN, PostgreSQL, MySQL, DynamoDB, Firebase
+  \item \textbf{Software Eng:} REST APIs, CI/CD, Git, Agile, IaC, Performance Tuning, Monitoring
+\end{itemize}
 
 \end{document}
