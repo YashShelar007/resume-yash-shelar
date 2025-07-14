@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 permissions:
   contents: write
@@ -13,11 +11,12 @@ jobs:
   compile:
     name: Compile resume PDF
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out the repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run the build process with Docker
+      - name: Run LaTeX build with Docker
         uses: addnab/docker-run-action@v3
         with:
           image: thomasweise/docker-texlive-full:latest
@@ -27,7 +26,7 @@ jobs:
             pdflatex yash_shelar_resume.tex
 
       - name: Auto-commit compiled PDF
-      - uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update compiled resume PDF
           commit_author: Yash Shelar <yshelar@asu.edu>
