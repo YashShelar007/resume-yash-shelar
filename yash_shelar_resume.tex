@@ -1,8 +1,7 @@
-
 %-------------------------
 % Resume in Latex
 % Author : Yash Ramesh Shelar
-% Based off of: https://github.com/sb2nov/resume
+% Based off of: https://github.com/YashShelar007/resume-yash-shelar
 % License : MIT
 %------------------------
 
@@ -15,11 +14,12 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+% \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-\usepackage[bottom=2cm, top=2.1cm, left=2.1cm, right=2.1cm]{geometry}
+\usepackage[bottom=2.1cm, top=2.1cm, left=2.1cm, right=2.1cm]{geometry}
 \usepackage{xcolor}
 \usepackage[colorlinks = true,linkcolor = blue,
             urlcolor  = blue, citecolor = blue,
@@ -32,6 +32,19 @@
 \setlist{label=\textbullet}
 \setlength{\footskip}{3.60004pt} 
 \usepackage{anyfontsize}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -53,20 +66,17 @@
 \setlength{\tabcolsep}{0in}
 \setlength{\hsize}{\hsize}
 
+
 \titleformat{\section}{
   \scshape\bfseries\raggedright
 }{}{0em}{\MakeUppercase}[\color{black}\titlerule]
 
+
+% Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
+%-------------------------
 % Custom commands
-\newcommand{\resumeExperienceHeading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & \textbf{#2} 
-    \end{tabular*}
-    \vspace{-15pt}
-}
 \newcommand{\resumeEducationContent}[4]{
   \item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -74,102 +84,135 @@
       {#3} & {#4} \\
     \end{tabular*}
 }
+\newcommand{\resumeExperienceHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{#2}
+    \end{tabular*}
+    \vspace{-15pt}
+}
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{#2}
     \end{tabular*}
-    \vspace{-10pt}
+    \vspace{-15pt}
 }
+
+%-------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \justifying
 \begin{center}
     \textbf{\Large \scshape YASH RAMESH SHELAR} \\
-    \href{mailto:yshelar2000@gmail.com}{\underline{yshelar2000@gmail.com}} $|$ 
-    (623) 281-8692 $|$
-    \href{https://linkedin.com/in/shelar-yash}{\underline{LinkedIn/shelar-yash}} $|$
-    \href{https://github.com/YashShelar007}{\underline{GitHub/YashShelar007}} $|$
-    Portfolio
+         {623-281-8692} $|$ \href{mailto:yshelar2000@gmail.com}{yshelar2000@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/shelar-yash/}{LinkedIn/shelar-yash} $|$
+    \href{https://github.com/YashShelar007}{GitHub/shelar-yash} $|$ 
+    \href{https://yashshelar.com/}{Portfolio/shelar-yash} $|$ Tempe, AZ
 \end{center}
-
-\vspace{-10pt}
+\vspace{-15pt}
+%-----------EDUCATION-----------
 \section{Education}
-\vspace{-5pt}
-\begin{itemize}[itemsep=1pt, leftmargin=0in, label={}]
-  \resumeEducationContent
-    {Master of Science (Thesis), Computer Science}{July 2025}
-    {Arizona State University, Tempe, AZ}{}
-    \vspace{-8pt}
-    \begin{itemize}[itemsep=-2pt]
-      \item \textbf{Thesis:} Model Compression as a Service for Resource-constrained Edge Devices
-      \item \textbf{Coursework:} Distributed Systems, Operating Systems, Cloud Computing, Data Structures \& Algorithms
+    \vspace{-5pt}
+    \begin{itemize}[itemsep=1pt, leftmargin=0in, label={}]
+        \resumeEducationContent
+          {Master of Science in Computer Science (Thesis)}{July 2025}
+          {Arizona State University, Tempe, AZ}{GPA: 3.50}
+          \vspace{-10pt}
+          \begin{itemize}[itemsep=-1pt]
+              \item{\textbf{Thesis}: Model Compression as a Service for Resource-constrained Edge Devices.}
+              \item{\textbf{Relevant Coursework}: Cloud Computing, Foundation of Algorithms, Mobile Computing, Data Visualization.}
+          \end{itemize}
+        \resumeEducationContent
+          {Bachelor of Science in Computer Science}{Dec 2022}
+          {Arizona State University, Tempe, AZ}{GPA: 3.92}
+          \vspace{-10pt}
+          \begin{itemize}[itemsep=-1pt]
+              \item{\textbf{Honors}: Summa Cum Laude, New American Scholar, Dean’s List.}
+              \item{
+              \textbf{Relevant Coursework}: Data Structures \& Algorithms, Object-Oriented Programming, Operating Systems, Machine Learning, Artificial Intelligence, Software Engineering, Database Management.}
+          \end{itemize}
     \end{itemize}
-  \resumeEducationContent
-    {Bachelor of Science, Computer Science}{Dec 2022}
-    {Arizona State University, Tempe, AZ}{}
-    \vspace{-8pt}
-    \begin{itemize}[itemsep=-2pt]
-      \item Honors: Summa Cum Laude, New American Scholar, Dean’s List
+
+\vspace{-15pt}
+%-----------PROGRAMMING SKILLS-----------
+\section{Programming Skills}
+    \vspace{-5pt}
+    \begin{itemize}[itemsep=-1pt, leftmargin=0in, label={}]
+        \item{\textbf{Programming Languages}: Python, C, C++, Go, Java, Javascript, Typescript, SQL, Shell, C\#, .NET.}
+        \item{\textbf{Frameworks \& Libraries}: React.js, Node.js, Flask, Spring Boot, Angular, Express.js, REST, gRPC, PyTorch, TensorFlow.}
+        \item{\textbf{Cloud \& DevOps}: AWS (Lambda, ECS, S3, API Gateway, DynamoDB, CloudWatch, EKS, SES, SQS, CloudFormation), GCP, Docker, Kubernetes, Terraform, GitHub Actions, Jenkins, CI/CD, NGINX.}
+        \item{\textbf{Databases}: PostgreSQL, MySQL, OracleDB, MongoDB, DynamoDB, Cassandra, Redis.}
+        \item {\textbf{Tools \& Platforms}: Git, Jira, Apache Kafka, Hadoop, Spark, Sentry, Grafana, Appwrite, Snowflake, Linux/Unix, macOS.}
     \end{itemize}
-\end{itemize}
 
-\vspace{-10pt}
-\section{Professional Experience}
-\vspace{-5pt}
-\begin{itemize}[leftmargin=0in, label={}]
-  \resumeExperienceHeading{Research Assistant — VISA Research Lab}{Jan 2024 – Present}
-  \begin{itemize}
-    \item Built a reliable compression pipeline using AWS ECS (Fargate), S3, and IoT Core, scaling to 1,000+ models/year.
-    \item Automated CI/CD pipelines with Terraform and GitHub Actions, achieving zero-downtime model updates.
-    \item Debugged live deployment failures and improved system resiliency across 10+ model architectures.
-  \end{itemize}
-  \resumeExperienceHeading{Teaching Assistant — Operating Systems, Mobile Computing}{Aug 2023 – Present}
-  \begin{itemize}
-    \item Mentored 600+ students on SwiftUI and OS internals; improved lab completion by 30\%.
-    \item Designed 5+ labs and grading scripts (Bash) to automate OS scheduling simulation evaluations.
-    \item Provided 100+ hours of individualized help, increasing app quality and student comprehension.
-  \end{itemize}
-\end{itemize}
+\vspace{-15pt}
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \vspace{-5pt}
+    \begin{itemize}[itemsep=1pt,leftmargin=0in, label={}]
+        % Experience #1
+        \resumeExperienceHeading{Cloud \& ML Researcher \textbar\ \href{https://visa.lab.asu.edu/}{VISA Research Lab}}{Jan 2024 - Present}
+        \begin{itemize}[itemsep=1pt]
+            \item Reduced manual compression time by 90\% and deployment failures by 42\% by designing a serverless ML model compression pipeline on AWS that scaled to 1,200+ monthly executions across 12+ model architectures with 99\% success rate.       
+            
+            \item Improved observability and reduced support tickets by 35\% by building a real-time UI using React/Tailwind, integrating Step Functions and DynamoDB-backed metrics, and cutting inference recovery time by 35\%.
+            
+            \item Accelerated release cycles by 6× and achieved zero-downtime CI/CD as measured by reducing release time from 30 minutes to under 5 minutes, by automating infrastructure with Terraform and GitHub Actions.
+            
+            \item \textbf{Tech-stack:} Python, Bash, PyTorch, AWS (ECS Fargate, S3, Lambda, Step Fucntions), Docker, Terraform, Git, React.
+        \end{itemize}
+        \vspace{-5pt}
 
-\vspace{-10pt}
+        % Experience #2
+        \resumeExperienceHeading{Teaching Assistant (OS \& Mobile App Development) \textbar\ \href{https://scai.engineering.asu.edu/}{SCAI, Arizona State University}}{Aug 2023 - Present}
+        \begin{itemize}[itemsep=1pt]
+            \item Raised lab pass rates from 62\% to 88\% as measured over 3 semesters, by mentoring 600+ students through targeted instruction in OS internals and SwiftUI, delivering 100+ hours of support, and maintaining a 4.5/5 avg. feedback rating.
+            
+            \item Reduced grading effort by 80\% and turnaround time by 3+ days by creating and deploying 5 core lab modules and auto-grading scripts using Bash scripting and Git-based pipelines.
+            
+            \item Improved project quality and cut setup/debugging time by 40\% by building SwiftUI starter templates used by 300+ students, standardizing architecture for consistent scaffolding and faster iteration.
+            
+            \item \textbf{Tech-stack:} C, C++, Swift, SwiftUI, Python, Linux, Bash, Xcode, Notion, Latex, Git.
+        \end{itemize}
+  \end{itemize}
+
+\vspace{-15pt}
+%-----------PROJECTS-----------
 \section{Projects}
-\vspace{-5pt}
-\begin{itemize}[leftmargin=0in, label={}]
-  \resumeProjectHeading{Production Microservices on AWS EKS}{Apr 2024 – Present}
-  \begin{itemize}
-    \item Orchestrated Docker-based microservices on AWS EKS with auto-scaling for 3x load.
-    \item Integrated Jenkins CI/CD pipelines, reducing manual deploy errors by 70\%.
-  \end{itemize}
+    \vspace{-5pt}
+    \begin{itemize}[itemsep=1pt,leftmargin=0in, label={}]
+        % Project #1
+        \resumeProjectHeading{Serverless REST API using AWS \textbar\ \href{https://github.com/YashShelar007/Serverless-Architecture}{GitHub}}{Jan 2024 - Apr 2024}
+        \begin{itemize}[itemsep=1pt]
+            \item Achieved scalable request handling (1,000+ req/sec) and reduced cold starts by building a fully serverless REST API with Cognito-based auth and DynamoDB workflows, optimizing cost and performance. 
+            
+            \item Reduced deployment time by 80\% by automating infrastructure provisioning via CloudFormation, ensuring consistent and reliable releases across staging and production environments
+            
+            \item \textbf{Tech-stack} AWS Lambda, API Gateway, DynamoDB, AWS Cognito, Python, CloudFormation.
+        \end{itemize}
 
-  \resumeProjectHeading{Infrastructure Observability Dashboard}{Apr 2024 – Present}
-  \begin{itemize}
-    \item Built observability stack with Grafana, Prometheus, and Loki on AWS EKS.
-    \item Implemented OpenTelemetry tracing to diagnose live errors under 5 mins.
-    \item Added alerting + log correlation, reducing incident response by 60\%.
-  \end{itemize}
+        % Project #2
+        \resumeProjectHeading{Personalized AI-Driven Travel Planner \textbar\ \href{https://github.com/YashShelar007/VoyageAI}{GitHub}}{Mar 2024 - May 2024}
+        \begin{itemize}[itemsep=1pt]
+            \item Reduced travel planning time by 60\% by generating multi-day itineraries through Gemini AI, integrating real-time suggestions for flights, hotels, and activities using Google Places API.
+            
+            \item Scaled to 5,000+ concurrent sessions and improved session consistency by 35\% by integrating Firebase Auth, Firestore, and Expo Router for secure user flows and seamless multi-screen navigation. 
+            
+            \item \textbf{Tech-stack:} React Native, Gemini AI, Google Places API, Firebase, Expo.  
+        \end{itemize}
 
-  \resumeProjectHeading{CDN-Backed Static Delivery System}{Mar 2024 – Present}
-  \begin{itemize}
-    \item Deployed a resilient static content pipeline using AWS CloudFront, S3, NGINX, and Route53.
-    \item Maintained 99.9\% uptime with caching and failover routing; cut latency by 45\%.
-  \end{itemize}
-
-  \resumeProjectHeading{Serverless REST API on AWS Lambda}{Jan 2024 – Mar 2024}
-  \begin{itemize}
-    \item Built and deployed REST API with API Gateway + Lambda, handling 1,000+ RPS.
-    \item Used CloudFormation for multi-stage deployments and infra consistency.
-  \end{itemize}
-\end{itemize}
-
-\vspace{-10pt}
-\section{Technical Skills}
-\vspace{-5pt}
-\begin{itemize}[itemsep=1pt, leftmargin=0in, label={}]
-  \item \textbf{Languages:} Python, C++, Java, JavaScript/TypeScript, Bash, Swift
-  \item \textbf{System \& Infrastructure:} Linux, Docker, Kubernetes (EKS), AWS (EC2, Lambda, S3), Terraform, GitHub Actions, Jenkins
-  \item \textbf{Networking \& Databases:} TCP/IP, Load Balancing, CDN, PostgreSQL, MySQL, DynamoDB, Firebase
-  \item \textbf{Software Eng:} REST APIs, CI/CD, Git, Agile, IaC, Performance Tuning, Monitoring
-\end{itemize}
+        % Project #3
+        \resumeProjectHeading{Personal Finance Dashboard 
+        \textbar\ \href{https://github.com/YashShelar007/WeathWay}{GitHub}}{Mar 2024 - Aug 2024}
+        \begin{itemize}[itemsep=1pt]
+            \item Reduced manual financial tracking by 70\% by building a real-time dashboard to sync bank accounts via Plaid and display categorized transaction insights across user-linked accounts. 
+            
+            \item Achieved 99.8\% service uptime and reduced debugging time by 60\% by integrating Sentry for alerting and Appwrite for authentication and secure data management.
+            
+            \item \textbf{Tech-stack:} Next.js, Plaid API, Appwrite, Sentry.
+        \end{itemize}
+    \end{itemize}
 
 \end{document}
